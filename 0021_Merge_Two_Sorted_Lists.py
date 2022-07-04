@@ -11,14 +11,14 @@ class Solution:
             return list1
         node1 = list1
         node2 = list2
-        
+
         if node1.val <= node2.val:
             head = node1
             node1 = node1.next
         else:
             head = node2
             node2 = node2.next
-        
+
         node = head
         while node1 and node2:
             if node1.val <= node2.val:
@@ -36,5 +36,5 @@ class Solution:
             node.next = node2
             node = node.next
             node2 = node2.next
-        
+
         return head

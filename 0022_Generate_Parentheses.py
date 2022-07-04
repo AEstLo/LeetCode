@@ -12,4 +12,3 @@ class Solution:
         res = []
         genParenthesis(2*n, 0, '', res)
         return res
-

@@ -13,7 +13,7 @@ class Solution:
             if self.findSubstringRec(s, i, words_dict, len_w):
                 ret.append(i)
         return ret
-    
+
     def findSubstringRec(self, s, s_start, words_dict, len_w):
         if not words_dict:
             return True
@@ -30,4 +30,3 @@ class Solution:
                 words_dict[str_to_review] = 1
             return ret
         return False
-

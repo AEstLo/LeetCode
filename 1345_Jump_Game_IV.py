@@ -13,7 +13,7 @@ class Solution:
         q.append((0, 0))
         visited = set()
         while q:
-            
+
             for pos, jumps in q:
                 if pos == target_pos:
                     return jumps

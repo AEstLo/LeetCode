@@ -7,12 +7,12 @@
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         ret = []
+
         def inorderTraversalRecursive(node):
             if node:
                 inorderTraversalRecursive(node.left)
                 ret.append(node.val)
                 inorderTraversalRecursive(node.right)
-        
+
         inorderTraversalRecursive(root)
         return ret
-

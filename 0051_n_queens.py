@@ -4,7 +4,7 @@ class Solution:
         results = []
         self.solveNQueensBT(n, 0, tab, results)
         return results
-    
+
     def solveNQueensBT(self, n: int, row: int, tab: List[int], results: List[List[str]]):
         if row >= n:
             result_str = []
@@ -19,16 +19,15 @@ class Solution:
                 tab[row] = col
                 self.solveNQueensBT(n, row + 1, tab, results)
         return
-    
+
     def isValid(self, n: int, row: int, col: int, tab: List[int]) -> bool:
         for row2 in range(row):
             col2 = tab[row2]
             if col2 == col:
                 return False
-        
+
             diff_cols = abs(col2 - col)
             diff_rows = row - row2  # always positive
             if diff_cols == diff_rows:
                 return False
         return True
-

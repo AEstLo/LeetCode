@@ -1,29 +1,32 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
-        if t == "": return ""
-        
+        if t == "":
+            return ""
+
         countT = Counter(t)
         window = Counter()
-        result = [float("infinity"), -1, -1]  # Length of the result, start and end positions
+        # Length of the result, start and end positions
+        result = [float("infinity"), -1, -1]
         have, need = 0, len(countT)
         l = 0
-        
+
         for r in range(len(s)):
             c = s[r]
             if c in countT:
                 window[c] += 1
-                
+
                 if window[c] == countT[c]:
                     have += 1
-                
+
                 while have == need:
                     # we have a result
                     currentResult = r - l + 1
                     if currentResult < result[0]:
                         result[0] = currentResult
                         result[1] = l
-                        result[2] = r + 1  # +1 because we need to include this character
-                    
+                        # +1 because we need to include this character
+                        result[2] = r + 1
+
                     # At this point, we try to remove elements from the left
                     if s[l] in countT:
                         window[s[l]] -= 1

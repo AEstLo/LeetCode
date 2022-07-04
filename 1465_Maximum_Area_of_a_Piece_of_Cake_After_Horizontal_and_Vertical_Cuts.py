@@ -1,6 +1,6 @@
 class Solution:
     def maxArea(self, h: int, w: int, horizontalCuts: List[int], verticalCuts: List[int]) -> int:
-        
+
         def getMaxArea(arrCuts, boundary):
             if arrCuts:
                 arrCuts.sort()
@@ -19,8 +19,7 @@ class Solution:
             else:
                 total = boundary
             return total
-        
+
         htotal = getMaxArea(horizontalCuts, h)
         vtotal = getMaxArea(verticalCuts, w)
         return vtotal * htotal % (10 ** 9 + 7)
-

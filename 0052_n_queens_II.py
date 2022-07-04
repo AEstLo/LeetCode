@@ -1,6 +1,6 @@
 class Solution:
     def totalNQueens(self, n: int) -> int:
-        
+
         def isValid(row: int, col: int) -> bool:
             for row2 in range(row):
                 col2 = tab[row2]
@@ -12,7 +12,7 @@ class Solution:
                 if diff_cols == diff_rows:
                     return False
             return True
-        
+
         def solveNQueensBT(row: int):
             if row >= n:
                 return 1
@@ -25,4 +25,3 @@ class Solution:
 
         tab = [-1] * n
         return solveNQueensBT(0)
-

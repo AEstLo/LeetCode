@@ -9,5 +9,5 @@ class Solution:
             l = r + 1
             r = fathest
             jumps += 1
-        
+
         return jumps

@@ -11,5 +11,5 @@ class Solution:
         partialPow = self.myPow(x, n // 2)
         result = partialPow * partialPow
         if n % 2 != 0:
-            result *= x 
+            result *= x
         return result

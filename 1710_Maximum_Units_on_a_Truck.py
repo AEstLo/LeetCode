@@ -12,4 +12,3 @@ class Solution:
                 total += boxTypes[b_i][1] * truckSize
                 truckSize = 0
         return total
-
