@@ -15,4 +15,4 @@ class Solution:
             x //= 10
             h //= 100
 
-        return True if x== 0 or h <= 1 else False
+        return True if x == 0 or h <= 1 else False
