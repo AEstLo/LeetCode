@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def minCost(self, houses: List[int], cost: List[List[int]], H: int, C: int, T: int) -> int:
         # THIS IS NOT MY SOLUTION: Credits to Larry: https://www.youtube.com/watch?v=2J4tkJ7v3r4
