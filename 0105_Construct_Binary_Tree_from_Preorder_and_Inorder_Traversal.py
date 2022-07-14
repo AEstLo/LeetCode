@@ -34,7 +34,11 @@ class TreeNode:  # Definition for a binary tree node.
 
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        map_val_pos_preorder = {val: idx for idx, val in enumerate(inorder)}
+        """
+        Time: O(N)
+        Space: O(N)
+        """
+        map_val_pos_inorder = {val: idx for idx, val in enumerate(inorder)}
 
         preorder_index = 0
 
@@ -54,8 +58,8 @@ class Solution:
             preorder_index += 1
             node = TreeNode(value)
 
-            node.left = process(left, map_val_pos_preorder[value] - 1)
-            node.right = process(map_val_pos_preorder[value] + 1, right)
+            node.left = process(left, map_val_pos_inorder[value] - 1)
+            node.right = process(map_val_pos_inorder[value] + 1, right)
 
             return node
 
