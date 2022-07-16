@@ -1,7 +1,7 @@
 class Solution:
     def findPaths(self, m: int, n: int, maxMove: int, startRow: int, startColumn: int) -> int:
         """
-        Time: without memoization -> O(4^maxMove)... with memoization -> O(m*n)
+        Time: without memoization -> O(4^maxMove)... with memoization -> O(m*n*maxMove)
         Space: without memoization -> O(maxMove).... with memoization -> O(m*n*maxMove)
         """
         memo = {}
