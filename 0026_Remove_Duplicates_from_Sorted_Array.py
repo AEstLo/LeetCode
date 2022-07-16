@@ -11,3 +11,6 @@ class Solution:
                 pos += 1
             runner += 1
         return pos + 1
+
+# Runtime: 191 ms, faster than 21.70% of Python3 online submissions for Remove Duplicates from Sorted Array.
+# Memory Usage: 15.5 MB, less than 60.57% of Python3 online submissions for Remove Duplicates from Sorted Array.
