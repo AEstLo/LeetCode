@@ -11,13 +11,13 @@ class Solution:
         """
         # Time: O(N)
         # Space: O(N) -> recursion calls
-        
+
         def rightMost(root):
             node = root
             while node.right:
                 node = node.right
             return node
-        
+
         def reAssignLeftChild(node, parent):
             if node:
                 reAssignLeftChild(node.left, node)
@@ -35,6 +35,6 @@ class Solution:
             print(root.val)
             self.preorder(root.left)
             self.preorder(root.right)
-            
+
 # Runtime: 48 ms, faster than 73.04% of Python3 online submissions for Flatten Binary Tree to Linked List.
 # Memory Usage: 15.4 MB, less than 10.29% of Python3 online submissions for Flatten Binary Tree to Linked List.
