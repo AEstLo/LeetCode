@@ -56,6 +56,10 @@ class Heap:
 
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
+        # Time: O(KlogN)
+        #   O(N) to create the heap
+        #   O(KlogN) to get K maximums
+        # Space: O(N) for the heap
         heap = Heap(nums)
         i = 1
         while i <= k:
