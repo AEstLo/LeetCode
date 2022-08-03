@@ -4,7 +4,7 @@ class MyCalendar:
         self.calendar = {}
 
     def book(self, start: int, end: int) -> bool:
-        # Being B the number of bookins of the calendar
+        # Being B the number of bookings of the calendar
         # Time: O(B^2)
         # Space: O(B)
         for k, v in self.calendar.items():
