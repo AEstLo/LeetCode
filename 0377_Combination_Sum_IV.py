@@ -1,6 +1,6 @@
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
-        # Time: O(N^target)
+        # Time: O(N*target)
         # Space: O(target)
         memo = {}
 
