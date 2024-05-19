@@ -6,9 +6,11 @@ class Solution:
         total = sum(nums)
         while delta:
             delta_1 = heapq.heappop(delta)
-            if delta:
-                delta_2 = heapq.heappop(delta)
-                sum_deltas = -delta_1 - delta_2
-                if sum_deltas > 0:
-                    total += sum_deltas
+            if not delta:
+                continue
+            delta_2 = heapq.heappop(delta)
+            sum_deltas = -delta_1 - delta_2
+            if sum_deltas <= 0:
+                break
+            total += sum_deltas
         return total
