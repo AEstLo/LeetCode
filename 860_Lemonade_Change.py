@@ -19,6 +19,6 @@ class Solution:
                     money[TEN] -= 1
                 else:
                     money[FIVE] -= 2
-                if money[TEN] < 0 or money[FIVE] < 0:
+                if money[FIVE] < 0:
                     return False
         return True
