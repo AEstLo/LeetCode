@@ -11,29 +11,28 @@ class Solution:
                 return -1
             mid = left + ((right - left) // 2)
             if arr[mid][0] == val:
-                # look right until val is different:
-                # We may have the same value with different beauties
-                mid += 1
-                while mid < len(arr) and arr[mid][0] == val:
-                    mid += 1
-                return mid - 1
+                return mid
             if arr[mid][0] < val:
                 return binary_search(arr, mid + 1, right, val)
             return binary_search(arr, left, mid - 1, val)
 
-        n = len(items)
         heap = list(items)
         heapq.heapify(heap)
         sorted_items = []
+        prev_price = heap[0][0]
+        max_beauty = heap[0][1]
         while heap:
-            sorted_items.append(heapq.heappop(heap))
-
-        for i in range(1, n):
-            sorted_items[i][1] = max(sorted_items[i-1][1], sorted_items[i][1])
+            price, beauty = heapq.heappop(heap)
+            if price > prev_price:
+                sorted_items.append((prev_price, max_beauty))
+                prev_price = price
+            max_beauty = max(max_beauty, beauty)
+        sorted_items.append((prev_price, max_beauty))
+        print(sorted_items)
         
         result = []
         for query in queries:
-            pos = binary_search(sorted_items, 0, n - 1, query)
+            pos = binary_search(sorted_items, 0, len(sorted_items) - 1, query)
             if pos >= 0:
                 value = sorted_items[pos][1]
             else:
