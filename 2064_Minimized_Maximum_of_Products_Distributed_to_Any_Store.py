@@ -4,9 +4,7 @@ class Solution:
         def canBeDistributed(amount):
             remaining_n = n
             for q in quantities:
-                while q > 0:
-                    remaining_n -= 1
-                    q -= amount
+                remaining_n -= math.ceil(q / amount)
                 if remaining_n < 0:
                     return False
             return True
