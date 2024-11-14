@@ -19,5 +19,4 @@ class Solution:
                 right = mid - 1
             else:
                 left = mid + 1
-            print(mid, result, left, right)
         return result
